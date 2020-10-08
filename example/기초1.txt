@@ -1,0 +1,50 @@
+const foodILike = [
+  {
+    id:1,
+    name: "Kimchi",
+    image: "https://placeimg.com/64/64/1",
+    rating:5
+  },
+  {
+    id:2,
+    name: "samgyetang2",
+    image: "https://placeimg.com/64/64/2",
+    rating:4
+  },
+  {
+    id:3,
+    name: "kimchi2",
+    image: "https://placeimg.com/64/64/3",
+    rating:4.8
+  },
+  {
+    id:4,
+    name: "samgyetang",
+    image: "https://placeimg.com/64/64/4",
+    rating:4.7
+  }
+]
+
+function Food({name, picture, rating}){
+  return <div><h2>like {name}?!</h2>
+              <h4>{rating}/5.0</h4>
+              <img src={picture} alt={name}/>
+          </div>
+}
+Food.propTypes={
+  name : PropTypes.string.isRequired,
+  picture : PropTypes.string.isRequired,
+  rating : PropTypes.number.isRequired
+};
+/*
+function renderFood(dish){
+  return <Food name={dish.name} picture={dish.image}/>
+}
+{foodILike.map(renderFood)}
+*/
+function App() {
+  return (<div>Hello
+            {foodILike.map(dish => (<Food key = {dish.id} name={dish.name} picture={dish.image} rating={dish.rating}/>))}
+          </div>
+  );
+}
