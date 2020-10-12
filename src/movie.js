@@ -4,23 +4,22 @@ import "./movie.css";
 
 function Movie({id, year, title, summary, poster, genres}){
     return(
-    <div class="movie">
+    <div className="movie">
         <img src={poster} alt={title} title={title}></img>
-        <div class="movie_data">
-            <h5 class="movie_title">{title}</h5>
-            <h5 class="movie_year">{year}</h5>
-            <ul class="movie_generes">
+        <div className="movie_data">
+            <h5 className="movie_title">{title}</h5>
+            <h5 className="movie_year">{year}</h5>
+            <ul className="movie_generes">
                 {genres.map((genre, index) => (
-                    <li key={index} class="genres_genre">{genre}</li>
+                    <li key={index} className="genres_genre">{genre}</li>
                 ))}
             </ul>
-            <h5 class="movie_summary">{summary}</h5>
-            <p class="movie_generes">{summary}</p>
+            <h5 className="movie_summary">{summary.slice(0,140)}</h5>
         </div>
     </div>
     )
 }
-
+//인자 오류 검사
 Movie.propTypes={
     id: PropTypes.number.isRequired,
     year: PropTypes.number.isRequired,
