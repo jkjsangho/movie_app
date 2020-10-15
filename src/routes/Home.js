@@ -4,8 +4,6 @@ import axios from "axios";
 import Movie from "../components/movie";
 import "./Home.css";
 
-
-
 class Home extends React.Component{
 
   state ={
@@ -27,7 +25,7 @@ class Home extends React.Component{
     */
     this.getMovies();
   }
-
+  
   render(){
     const{isLoading, movies} = this.state;
     return <section className="container">
